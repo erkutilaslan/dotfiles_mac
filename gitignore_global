@@ -1,0 +1,25 @@
+# Global .gitignore settings
+*~
+*.swo
+*.swp
+.Rhistory
+.RData
+# Packages
+
+
+# Log and databases
+
+
+
+# OS generated files
+
+
+
+
+
+
+
+
+
+
+

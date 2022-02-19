@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+rm ~/.zshrc ~/.nvimrc ~/.gitconfig ~/.gitignore_global ~/.tmux.conf ~/.inputrc
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/nvimrc ~/.nvimrc
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/inputrc ~/.inputrc
+exit
+

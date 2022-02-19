@@ -1,0 +1,6 @@
+[user]
+	email = erkutilaslan@gmail.com
+	name = erkutilaslan
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
