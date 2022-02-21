@@ -1,3 +1,16 @@
+" general settings
+syntax on
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set noswapfile
+set nobackup
+set undodir= ~/.nvim/undodir
+set undofile
+set colorcolumn=80
+
 " Required by Vundle
 set nocompatible " be improved, required
 filetype off  "required
@@ -92,9 +105,6 @@ set incsearch
 " Unbind some useless/annoying default key bindings.
 nmap Q <Nop> 
 map Q <Nop>
-
-" Disable audible bell because it's annoying.
-set noerrorbells visualbell t_vb=
 
 " Enable mouse support. You should avoid relying on this too much, but it can
 " sometimes be convenient.
