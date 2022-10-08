@@ -7,7 +7,6 @@ set expandtab
 set smartindent
 set noswapfile
 set nobackup
-set undodir= ~/.nvim/undodir
 set undofile
 set colorcolumn=80
 
@@ -23,9 +22,12 @@ filetype off  "required
  " let Vundle manage Vundle, required
  Plugin 'VundleVim/Vundle.vim'
  
-" YouCompleteMe plugin. i disabled this plugging to use ncm2 for R auto
-" complete
-Plugin 'ycm-core/YouCompleteMe'
+ "coc.nvim for auto completion
+Plugin 'neoclide/coc.nvim'
+
+"airline statusbar for nvim
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Gruvbox theme
 Plugin 'morhetz/gruvbox'
@@ -46,10 +48,6 @@ Plugin 'jalvesaq/Nvim-R' , {'branch': 'stable'}
 
 " Auto pairing for brackets and quotes
 Plugin 'jiangmiao/auto-pairs'
-
-"Linting
-Plugin 'dense-analysis/ale'
-"configure ale for R
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -156,12 +154,6 @@ colorscheme gruvbox
 " I dont really know wtf is this doing but it was in the excersices.
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP' 
-
-" powerline setup
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-set laststatus=2
 
 " configuration to speed up <ESC> and key stroke combination operations
 set ttimeout
