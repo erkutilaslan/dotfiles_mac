@@ -9,20 +9,23 @@ set noswapfile
 set nobackup
 set undofile
 set colorcolumn=80
+"
+"enable global clipboard
+set clipboard+=unnamedplus
 
 " Required by Vundle
 set nocompatible " be improved, required
 filetype off  "required
 
 " set the runtime path to include Vundle and initialize
- set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
- " alternatively, pass a path where Vundle should install plugins
- "call vundle#begin('~/some/path/here')
- " let Vundle manage Vundle, required
- Plugin 'VundleVim/Vundle.vim'
- 
- "coc.nvim for auto completion
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"coc.nvim for auto completion
 Plugin 'neoclide/coc.nvim'
 
 "airline statusbar for nvim
@@ -100,7 +103,7 @@ set smartcase
 " Enable searching as you type, rather than waiting till you press enter.
 set incsearch
 
-" Unbind some useless/annoying default key bindings.
+"Unbind some useless/annoying default key bindings.
 nmap Q <Nop> 
 map Q <Nop>
 
@@ -128,12 +131,6 @@ nnoremap <S-J> <nop>
 
 "remap Ctrl C to ESC
 inoremap <C-c> <ESC>
-
-"remapping yank and paste so it works globally
-nnoremap <Leader>y "+y
-nnoremap <Leader>Y "+Y
-nnoremap <Leader>p "+p
-nnoremap <Leader>P "+P
 
 " This is to set background color to dark. This is usefull for using Ubuntu 
 " built inside Windows. Normally the color scheme is from Windwos and this
@@ -177,9 +174,6 @@ let maplocalleader = ','
 " nvim-R
 let R_csv_app = 'tmux new-window vd'
 
-"setting for ycm to integrate ycm and nvim-r
-let ycm_semantic_triggers = { 'r' : ['re!..', '/', '::', '$'. '@'] }
-
 " Opens NERDTree automatically when vim starts up if no files specified
  autocmd StdinReadPre * let s:std_in=1
  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -195,3 +189,4 @@ map <C-n> :NERDTreeToggle<CR>
 
 " keep cursor centered vertially on the screen
 :set so=999
+
