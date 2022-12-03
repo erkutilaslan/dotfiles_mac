@@ -50,6 +50,9 @@ Plugin 'airblade/vim-rooter'
 "R support for vim
 Plugin 'jalvesaq/Nvim-R' , {'branch': 'stable'}
 
+"Nextflow syntax highlighting
+Plugin 'LukeGoodsell/nextflow-vim'
+
 " Auto pairing for brackets and quotes
 Plugin 'jiangmiao/auto-pairs'
 
