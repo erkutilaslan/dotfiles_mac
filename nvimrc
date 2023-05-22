@@ -10,9 +10,57 @@ set nobackup
 set nowritebackup
 set undofile
 set colorcolumn=80
-"
+set number
+set relativenumber
+
+" configuration to speed up <ESC> and key stroke combination operations
+set ttimeout
+set timeoutlen=1000
+set ttimeoutlen=50
+
+" Enable mouse support
+set mouse+=a
+
+" highlight the current line
+set cursorline
+
+" This is to set background color to dark
+set background=dark 
+
+"set color scheme to 256 bits. this solves problem with vim not having
+"the proper color scheme inside tmux.
+set t_Co=256
+
+" Always show the status line at the bottom, even if you only have one window open.
+set laststatus=2
+
+" The backspace key has slightly unintuitive behavior by default. For example,
+" by default, you can't backspace before the insertion point set with 'i'.
+" This configuration makes backspace behave more reasonably, in that you can
+" backspace over anything.
+set backspace=indent,eol,start
+
+" By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
+" shown in any window) that has unsaved changes. This is to prevent you from "
+" forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
+" hidden buffers helpful enough to disable this protection. See `:help hidden`
+" for more information on this.
+set hidden
+
+" This setting makes search case-insensitive when all characters in the string
+" being searched are lowercase. However, the search becomes case-sensitive if
+" it contains any capital letters. This makes searching more convenient.
+set ignorecase
+set smartcase
+
+" Enable searching as you type, rather than waiting till you press enter.
+set incsearch
+
 "enable global clipboard
 set clipboard+=unnamedplus
+
+" Disable the default Vim startup message.
+set shortmess+=I
 
 " Required by Vundle
 set nocompatible " be improved, required
@@ -70,57 +118,16 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 
-" Turn on syntax highlighting.
-syntax on
-
-" Disable the default Vim startup message.
-set shortmess+=I
-
-" Show line numbers.
-set number
-
-" Set relative line numbers
-set relativenumber
-
-" Always show the status line at the bottom, even if you only have one window open.
-set laststatus=2
-
-" The backspace key has slightly unintuitive behavior by default. For example,
-" by default, you can't backspace before the insertion point set with 'i'.
-" This configuration makes backspace behave more reasonably, in that you can
-" backspace over anything.
-set backspace=indent,eol,start
-
-" By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
-" shown in any window) that has unsaved changes. This is to prevent you from "
-" forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
-" hidden buffers helpful enough to disable this protection. See `:help hidden`
-" for more information on this.
-set hidden
-
-" This setting makes search case-insensitive when all characters in the string
-" being searched are lowercase. However, the search becomes case-sensitive if
-" it contains any capital letters. This makes searching more convenient.
-set ignorecase
-set smartcase
-
-" Enable searching as you type, rather than waiting till you press enter.
-set incsearch
-
-"Unbind some useless/annoying default key bindings.
-nmap Q <Nop> 
-map Q <Nop>
-
-" Enable mouse support. You should avoid relying on this too much, but it can
-" sometimes be convenient.
-set mouse+=a
-
 "keybindings
 "easier split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"Unbind some useless/annoying default key bindings.
+nmap Q <Nop> 
+map Q <Nop>
 
 "arrows keys to resize splits
 nnoremap <Up> :resize -2<CR>
@@ -136,15 +143,6 @@ nnoremap <S-J> <nop>
 "remap Ctrl C to ESC
 inoremap <C-c> <ESC>
 
-" This is to set background color to dark. This is usefull for using Ubuntu 
-" built inside Windows. Normally the color scheme is from Windwos and this
-" looks really bad.
-set background=dark 
-
-"set color scheme to 256 bits. this solves problem with vim not having
-"the proper color scheme inside tmux.
-set t_Co=256
-
 " gruvbox configuration
 let g:gruvbox_contrast_dark = 'hard'
 
@@ -155,14 +153,6 @@ colorscheme gruvbox
 " I dont really know wtf is this doing but it was in the excersices.
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP' 
-
-" configuration to speed up <ESC> and key stroke combination operations
-set ttimeout
-set timeoutlen=1000
-set ttimeoutlen=50
-
-" highlight the current line
-set cursorline
 
 " disabling Nvim-R commands
 let R_assign = 0 
