@@ -15,6 +15,9 @@ export PATH=/opt/homebrew/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Path fix for miniforge3
+export PATH=~/miniforge3/bin:$PATH
+
 #auto start tmux when open zsh
 ZSH_TMUX_AUTOSTART=true
 
@@ -127,16 +130,22 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/erkut/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/lwr221/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/erkut/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/erkut/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/lwr221/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/lwr221/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/erkut/opt/anaconda3/bin:$PATH"
+        export PATH="/Users/lwr221/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/Users/lwr221/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/Users/lwr221/miniforge3/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
+#set start directory
+cd ~/Work/Postdoc/Projects
