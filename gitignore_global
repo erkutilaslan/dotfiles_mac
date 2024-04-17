@@ -2,6 +2,7 @@
 *~
 *.swo
 *.swp
+.nextflow*
 .Rhistory
 .RData
 .DS_Store
