@@ -147,6 +147,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias conda="mamba"
+alias ls="eza"
 
 #set start directory
 cd ~/Work/Postdoc/Projects
